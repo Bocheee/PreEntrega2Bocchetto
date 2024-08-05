@@ -2,7 +2,7 @@
 /* BOTON PARA ABRIR EL MENU DEL CARRITO */
 document.addEventListener('DOMContentLoaded', function(){
     let btnCarrito = document.getElementById('btn-carrito');
-    let btnClosed = document.getElementById('btn-closed')
+    let btnClosed = document.getElementById('btn-closed');
     let menuToggle = document.getElementById('menu-carrito');
     
 
@@ -95,7 +95,7 @@ const frituras = [
     }
 ]
 
-const containerProductos = document.querySelector("#productos");
+const containerProductos = document.querySelector("#productos"); //ESTE NO LO USO
 const carritoVacio = document.querySelector("#carrito-vacio");
 const contenedorProductosBurguers = document.querySelector('#contenedor-burguers');
 const contenedorProductosBebidas = document.querySelector('#contenedor-bebidas');
@@ -113,7 +113,6 @@ const carritoTotal = document.querySelector("#carrito-total");
     </div>
 </div>*/
 burguers.forEach((burguer) =>{
-    
     let div = document.createElement("div");
     div.classList.add("burguers");
     div.innerHTML = `
@@ -122,13 +121,19 @@ burguers.forEach((burguer) =>{
         <div class="detalles-productos" ">
             <h4 class="nombre-producto">${burguer.nombre}</h4>
             <p class="descripcion-producto">${burguer.descripcion}</p>
-            <p class="precio-producto">${burguer.precio}</p>
-            <button class="carrito-add"><i class='bx bx-cart-add'></i></button>
+            <p class="precio-producto">Simple: ${burguer.precio}</p>
+            <button class="carrito-add" id="carrito-add"><i class='bx bx-cart-add'></i></button>
         </div>
     </div>
     `;
+
+    
+    
     contenedorProductosBurguers.append(div);
+
 })
+
+
 
 bebidas.forEach((bebida) =>{
     let div = document.createElement("div");
