@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
+const carrito =[
+
+]
+
 const burguers = [
     {
         nombre: "American",
@@ -100,6 +104,9 @@ const carritoVacio = document.querySelector("#carrito-vacio");
 const contenedorProductosBurguers = document.querySelector('#contenedor-burguers');
 const contenedorProductosBebidas = document.querySelector('#contenedor-bebidas');
 const contenedorProductosFrito = document.querySelector('#contenedor-frito');
+
+//carrito
+
 const carritoTotal = document.querySelector("#carrito-total");
 
 /*
@@ -118,7 +125,7 @@ burguers.forEach((burguer) =>{
     div.innerHTML = `
     <div class="contenedor-producto">
         <img src="${burguer.imagen}" alt="">
-        <div class="detalles-productos" ">
+        <div class="detalles-productos">
             <h4 class="nombre-producto">${burguer.nombre}</h4>
             <p class="descripcion-producto">${burguer.descripcion}</p>
             <p class="precio-producto">Simple: ${burguer.precio}</p>
@@ -127,13 +134,11 @@ burguers.forEach((burguer) =>{
     </div>
     `;
 
-    document.addEventListener('DOMContentLoaded', function(){
-
-        let button = document.getElementById('carrito-add');
-        button.addEventListener("click", ()=>{
-            console.log("burguer");
-        });
+    let button = div.querySelector(".carrito-add");
+    button.addEventListener("click", ()=>{
+        agregarAlCarrito(burguer)
     });
+
     contenedorProductosBurguers.append(div);
 
 })
@@ -153,6 +158,12 @@ bebidas.forEach((bebida) =>{
         </div>
     </div>
     `;
+
+    let button = div.querySelector(".carrito-add");
+    button.addEventListener("click", ()=>{
+        console.log(bebida)
+    });
+
     contenedorProductosBebidas.append(div);
 })
 
@@ -169,5 +180,17 @@ frituras.forEach((frito) =>{
         </div>
     </div>
     `;
+
+    let button = div.querySelector(".carrito-add");
+    button.addEventListener("click", ()=>{
+        console.log(frito)
+    });
+
+
     contenedorProductosFrito.append(div);
 })
+
+const agregarAlCarrito = (burguers) =>{
+    carrito.push(burguers);
+    console.log(carrito);
+}
