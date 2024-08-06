@@ -122,13 +122,18 @@ burguers.forEach((burguer) =>{
             <h4 class="nombre-producto">${burguer.nombre}</h4>
             <p class="descripcion-producto">${burguer.descripcion}</p>
             <p class="precio-producto">Simple: ${burguer.precio}</p>
-            <button class="carrito-add" id="carrito-add"><i class='bx bx-cart-add'></i></button>
+            <button class="carrito-add"><i class='bx bx-cart-add'></i></button>
         </div>
     </div>
     `;
 
-    
-    
+    document.addEventListener('DOMContentLoaded', function(){
+
+        let button = document.getElementById('carrito-add');
+        button.addEventListener("click", ()=>{
+            console.log("burguer");
+        });
+    });
     contenedorProductosBurguers.append(div);
 
 })
