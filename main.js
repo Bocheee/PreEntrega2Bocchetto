@@ -10,6 +10,9 @@ const contenedorProductosFrito = document.querySelector('#contenedor-frito');
 const carritoProductos = document.querySelector("#contenedor-productos");
 const carritoVacio = document.querySelector("#carrito-vacio");
 
+//BTN de los carritos
+const btnEnviarPedido = document.querySelector("#btn-enviar-pedido");
+
 
 //ARRAY DONDE SE ALMACENAN LOS PRODUCTOS QUE VAMOS AÑADIENDO AL CARRITO
 const carrito =[
@@ -196,9 +199,11 @@ function estadoCarrito(){
     if(carrito.length === 0){
         carritoVacio.classList.remove("d-none");
         carritoProductos.classList.add("d-none");
+        btnEnviarPedido.classList.add("d-none");
     } else{
         carritoVacio.classList.add("d-none");
         carritoProductos.classList.remove("d-none");
+        btnEnviarPedido.classList.remove("d-none");
 
         carritoProductos.innerHTML = "";
         carrito.forEach((productos) =>{
@@ -210,9 +215,11 @@ function estadoCarrito(){
                 <img src="${productos.imagen}" alt="">
                 <h4 class="nombre-producto">${productos.nombre}</h4>
                 <p class="precio-producto">${productos.precio}</p>
-                <button class="btn-remove">✖️</button>
+                <button class="btn-remove"><i class='bx bx-x'></i></button>
             </div>
             `
+
+            
 
             let btnRemove = div.querySelector(".btn-remove");
             btnRemove.addEventListener("click", () =>{

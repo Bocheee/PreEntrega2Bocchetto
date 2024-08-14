@@ -55,6 +55,12 @@ header{
     
 }
 
+.section-productos .nombre-secciones{
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+}
+
 .contenedor-menu{
     position: relative;
     top: 0;
@@ -86,7 +92,9 @@ header{
 }
 
 .contenedor-menu .btn-closed{
-    padding: 20px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
     background: none;
     font: inherit;
     border: none;
@@ -106,7 +114,7 @@ header{
     background: #000000;
     z-index: 1;
     transition: right 1s ease;
-    
+    overflow: scroll;
 }
 
 .menu-carrito.active{
@@ -119,7 +127,20 @@ header{
     flex-direction: column;
     background: #000000;
     width: 100%;
+    padding: 50px 0;
     
+}
+
+.carrito-container .btn-enviar-pedido{
+    min-width: 100px;
+    min-height: 50px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 50px;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #491212;
 }
 
 .carrito-container strong{
@@ -140,7 +161,6 @@ header{
     text-align: center;
 }
 
-
 .contenedor-productos .carrito-productos{
     display: flex;
     justify-content: space-between;
@@ -149,6 +169,7 @@ header{
     min-height: 80px;
     margin: 20px auto;
 }
+
 
 .carrito-productos .nombre-producto{
     font-size: 1.4rem;
@@ -167,8 +188,9 @@ header{
 .carrito-productos .btn-remove{
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 30px;
     cursor: pointer;
+    color: #ffffff;
 }
 
 
@@ -278,7 +300,10 @@ header{
 
     .contenedor-menu .menu-carrito{
         width: 90%;
+        height: 100%;
+        overflow: scroll;
     }
+    
 
     .carrito-container .carrito-productos{
         width: 90%;
